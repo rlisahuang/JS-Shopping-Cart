@@ -11,11 +11,6 @@ const responsiveNavbar = (function () {
 	});
 })();
 
-if (document.getElementById('hearderSlide')) {
-	$('#hearderSlide').multislider();
-	$('#hearderSlide').multislider('pause');
-}
-
 
 function closeCart() {
 	const cart = document.querySelector('.producstOnCart');
@@ -36,3 +31,39 @@ const closeShopCart = document.querySelector('#closeButton');
 const overlay = document.querySelector('.overlay');
 closeShopCart.addEventListener('click', closeCart);
 overlay.addEventListener('click', closeCart);
+
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const modalOverlay = document.getElementById('overlay')
+const modal = document.querySelector('#modal')
+
+
+document.addEventListener('click', () => {
+	console.log('document is clicked');
+	openModal();
+})
+
+modalOverlay.addEventListener('click', (e) => {
+	e.stopPropagation(); // remove for introducing bug
+	console.log('overlay is clicked');
+	closeModal();
+})
+
+closeModalButtons.forEach(button => {
+	button.addEventListener('click', (e) => {
+		e.stopPropagation(); // remove for introducing bug
+		console.log('closeButton is clicked');
+		closeModal();
+	})
+});
+
+function openModal() {
+	modal.classList.add('active');
+	modalOverlay.classList.add('active');
+}
+
+function closeModal() {
+	modal.classList.remove('active')
+	modalOverlay.classList.remove('active')
+}
