@@ -52,7 +52,7 @@ modalOverlay.addEventListener('click', (e) => {
 
 closeModalButtons.forEach(button => {
 	button.addEventListener('click', (e) => {
-		e.stopPropagation(); // remove for introducing bug
+		// e.stopPropagation(); // remove for introducing bug
 		console.log('closeButton is clicked');
 		closeModal();
 	})
@@ -67,3 +67,4 @@ function closeModal() {
 	modal.classList.remove('active')
 	modalOverlay.classList.remove('active')
 }
+

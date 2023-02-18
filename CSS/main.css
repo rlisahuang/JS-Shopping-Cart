@@ -1057,7 +1057,7 @@ footer .footer-second {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
+    /* transition: 200ms ease-in-out; */
     border: 1px solid black;
     border-radius: 10px;
     z-index: 10;
@@ -1099,7 +1099,7 @@ footer .footer-second {
   #overlay {
     position: fixed;
     opacity: 0;
-    transition: 200ms ease-in-out;
+    /* transition: 200ms ease-in-out; */
     top: 0;
     left: 0;
     right: 0;
