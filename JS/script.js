@@ -42,17 +42,15 @@ const modal = document.querySelector('#modal')
 document.addEventListener('click', () => {
 	console.log('document is clicked');
 	openModal();
-})
+});
 
-modalOverlay.addEventListener('click', (e) => {
-	e.stopPropagation(); // remove for introducing bug
+modalOverlay.addEventListener('click', () => {
 	console.log('overlay is clicked');
 	closeModal();
-})
+});
 
 closeModalButtons.forEach(button => {
-	button.addEventListener('click', (e) => {
-		// e.stopPropagation(); // remove for introducing bug
+	button.addEventListener('click', () => {
 		console.log('closeButton is clicked');
 		closeModal();
 	})
